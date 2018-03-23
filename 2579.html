@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>12171653 유서정</title>
+    <style>
+        h1 {
+            color: pink
+        }
+    </style>
+
+</head>
+
+<body>
+  <section>   
+    <h3>2579 계단오르기</h3>
+    <p>
+            #include <iostream><br>
+                    #include <algorithm><br>
+                    using namespace std;<br>
+                    
+                    <br>
+                    int dp[3001];<br>
+                    int stair[3001];<br>
+                    int main()<br>
+                    {<br>
+                        int n;<br>
+                        <br>
+                        scanf("%d", &n);<br>
+                        for (int i = 0; i < n; i++)<br>
+                        {<br>
+                            scanf("%d", &stair[i]);<br>
+                        }<br>
+                        <br>
+                        dp[0] = stair[0];<br>
+                        dp[1] = dp[0]+stair[1];<br>
+                        dp[2] = stair[2] + max(stair[0], stair[1]);<br>
+                        <br>
+                        for (int i = 3; i < n; i++)<br>
+                        {<br>
+                            dp[i] = max(stair[i] + stair[i - 1] + dp[i - 3], stair[i] + dp[i - 2]);<br>
+                        }<br>
+                        <br>
+                        printf("%d\n", dp[n - 1]);<br>
+                        <br>
+                    }<br>
+                   
+    </p>
+
+        
+  </section>
+   
+
+</body>
+
+
+</html>
+
+
+<!-- 개발자 포트폴리오-->
